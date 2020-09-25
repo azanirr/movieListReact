@@ -1,0 +1,126 @@
+.Container {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 1000px;
+	position: relative;
+	background: url(https://i.ibb.co/yyzGKW2/ori.jpg);
+	background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.ContainerSearch {
+	position: relative;
+	margin-top: 400px;
+	margin-left: 250px;
+	width: 40%;
+	float: left;
+	z-index: 1;
+}
+
+.Title{
+	text-align: left;
+	font-size: 40px;
+	font-weight: 700;
+	color: white;
+}
+
+.Para{
+	text-align: left;
+	font-size: 20px;
+	color: white;
+}
+
+.Image{
+	margin-top: 180px;
+	position: relative;
+	z-index: 2;
+}
+
+.BodyContainer{
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 100px;
+}
+
+.TitleContainer{
+	width: 100%;
+}
+.TitleContainer h1{
+	color:  black;
+	font-size: 40px;
+	font-weight: 700;
+}
+.TitleContainer p{
+	color:  black;
+	font-size: 20px;
+	line-height: 150%;
+	margin: 0 200px;
+}
+.ContainerSlide{
+	position:relative;
+}
+
+.Slideshow{
+	width: 900px;
+	height: 600px;
+	list-style: none;
+	margin-bottom: 100px;
+}
+
+.Slideshow li {
+	list-style-type: none;
+	position: absolute;
+  	top: 100px;
+	right: 0;
+  	left: 0;
+	margin-left: auto;
+	margin-right: auto;
+	width: 1050px;
+	height: 700px;
+  	background-size: cover;
+  	background-position: 50% 50%;
+  	background-repeat: no-repeat;
+  	opacity: 0;
+  	z-index: 0;
+	box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+  	animation: imageAnimation 50s linear infinite; 
+}
+
+.Slideshow li:nth-child(1) { 
+  background-image: url('../../../assets/Image/4.jpg'); 
+}
+.Slideshow li:nth-child(2) { 
+  background-image: url('../../../assets/Image/tawa.jpg');
+  animation-delay: 10s; 
+}
+.Slideshow li:nth-child(3) { 
+  background-image: url('../../../assets/Image/3.jpg');
+  animation-delay: 20s; 
+}
+.Slideshow li:nth-child(4) { 
+  background-image: url('../../../assets/Image/2.jpg');
+  animation-delay: 30s; 
+}
+.Slideshow li:nth-child(5) { 
+  background-image: url('../../../assets/Image/1.jpg');
+  animation-delay: 40s;
+}
+
+@keyframes imageAnimation { 
+  0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+}
