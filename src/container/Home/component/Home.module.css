@@ -114,7 +114,7 @@ transition: background-image 0.2s ease-in-out;
 
 .MoviesContainer {
 	width: 250px;
-	height: 630px;
+	height: 550px;
 	border: 0px solid black;
 	margin-right: 50px;
 	margin-bottom: 100px;
@@ -145,5 +145,5 @@ transition: background-image 0.2s ease-in-out;
 }
 
 .MoviesContainer h1{
-	font-size: 30px;
+	font-size: 25px;
 }
