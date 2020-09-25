@@ -25,11 +25,15 @@ export default class Body extends Component {
 				: 
 				this.props.search.map(list => {
 					return(
-					
-					<Movies 
-						key={list.id}
-						list={list}
-						/>
+					<NavLink
+						className={styles.Linked}
+						to={"/details/" + list.id}>
+						<Movies 
+							key={list.id}
+							list={list}
+							details={this.props.details}
+							/>
+					</NavLink>
 					)
 				})
 				}
