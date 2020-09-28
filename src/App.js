@@ -67,7 +67,7 @@ export default class App extends Component {
 		return (
 			<div className="App">
 				<Router>
-					<Scroll />
+					<Scroll>
 					<Switch>
 						<Route path="/details/:id">
 							<Details 
@@ -128,6 +128,7 @@ export default class App extends Component {
 								/>
 						</Route>
 					</Switch>
+					</Scroll>
 				</Router>
 			</div>
  		);
