@@ -9,6 +9,19 @@
 	height: 100%;	
 }
 
+.Pages{
+	width: 25%;
+	float: left;
+	text-align: left;
+	margin-left: 7%;
+}
+
+.Data{
+	text-align: center;
+	width: 50;
+	margin: 0 auto;
+}
+
 .Li {
 	margin: 10px 0;
 	box-sizing: border-box;
@@ -39,10 +52,45 @@
 	height: 600px;
 }
 
+.Logo{
+	width: 50%;
+	position: absolute;
+	top: 250px;
+	right: 100px;
+	z-index: 3;
+	-webkit-animation: roll-in-top 1.5s ease-out both;
+	        animation: roll-in-top 1.5s ease-out both;
+}
+
+
+@-webkit-keyframes roll-in-top {
+  0% {
+    -webkit-transform: translateY(-800px) rotate(-540deg);
+            transform: translateY(-800px) rotate(-540deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0) rotate(0deg);
+            transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+@keyframes roll-in-top {
+  0% {
+    -webkit-transform: translateY(-800px) rotate(-540deg);
+            transform: translateY(-800px) rotate(-540deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0) rotate(0deg);
+            transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+
 .Container {
-	background-image: url('../../../assets/Image/back.jpg');
-	background-size: cover;
-    background-repeat: no-repeat;
+
 	margin: 0;
 	padding: 0;
 	width: 100%;
@@ -74,14 +122,56 @@ transition: background-image 0.2s ease-in-out;
 	border-bottom-left-radius: 0;
 	border-top-left-radius:0;
 }
+.focus-in-contract-bck {
+	-webkit-animation: focus-in-contract-bck 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: focus-in-contract-bck 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes focus-in-contract-bck {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(300px);
+            transform: translateZ(300px);
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(12px);
+            transform: translateZ(12px);
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes focus-in-contract-bck {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(300px);
+            transform: translateZ(300px);
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(12px);
+            transform: translateZ(12px);
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+
 
 .ContainerSearch {
 	position: relative;
 	margin-top: 300px;
 	margin-left: 200px;
-	width: 40%;
-	float: left;
+	width: 50%;
+	float: middle;
 	z-index: 1;
+	-webkit-animation: focus-in-contract-bck 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: focus-in-contract-bck 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .Particles{
@@ -103,16 +193,32 @@ transition: background-image 0.2s ease-in-out;
 	color: white;
 }
 
+.Options{
+	display: block;
+	width: 20%;
+	margin: 0 auto;
+	padding: .375rem .75rem;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: #495057;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #ced4da;
+	border-radius: .25rem;
+	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
 .BodyContainer{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	margin: 100px 7%;
+	margin: 100px 7% 0 7%;
 	max-width:100%;
 	flex-wrap: wrap;
 }
 
 .MoviesContainer {
+	position: relative;
 	width: 250px;
 	height: 550px;
 	border: 0px solid black;
@@ -123,6 +229,7 @@ transition: background-image 0.2s ease-in-out;
 	transition: 0.5s ease-in-out;
 }
 
+
 .MoviesContainer:hover{
 	transform: translatey(30px);
 	box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
@@ -130,6 +237,18 @@ transition: background-image 0.2s ease-in-out;
 
 .MoviesContainer:nth-child(5n){
 	margin-right: 0px;
+}
+
+.Rating {
+	font-size: 20px;
+	position: absolute;
+	width: 50px;
+	top:0;
+	right: 20px;
+	background-color:#D4AF37;
+	color: white;
+	line-height:250%;
+	border-radius: 75%;
 }
 
 .MoviesContainer img{

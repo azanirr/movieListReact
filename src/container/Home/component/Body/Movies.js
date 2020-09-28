@@ -11,6 +11,7 @@ export default class Movies extends Component {
 			<div 
 				className={styles.MoviesContainer}
 				onClick={() => this.props.details(list.id)}>
+				<h2 className={styles.Rating}> {list.vote_average} </h2>
 				<img 
 					alt="cuk" 
 					src={"https://image.tmdb.org/t/p/original" + list.poster_path}></img>

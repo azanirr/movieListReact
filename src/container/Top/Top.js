@@ -1,16 +1,14 @@
 import React, {Component} from 'react';
-import Head from './component/Head/Head';
-import Body from './component/Body/Body';
-import Options from './component/Body/Options';
-import Pagination from "react-js-pagination";
-import axios from 'axios';
+import Head from '../Home/component/Head/Head';
+import Options from '../Home/component/Body/Options';
+import Body from '../Home/component/Body/Body';
 import Footer from '../Footer/Footer';
-import "./Home.css";
-import styles from './component/Home.module.css';
+import axios from 'axios';
+import Pagination from "react-js-pagination";
+import "../Home/Home.css";
+import styles from '../Home/component/Home.module.css';
 
-
-export default class Home extends Component {
-	
+export default class Top extends Component {
 	state = {
 		moviesList: [],
 		totalResults: 0,
@@ -19,21 +17,19 @@ export default class Home extends Component {
 	}
 
 	componentDidMount() {
-		axios.get('https://api.themoviedb.org/3/movie/popular?api_key=090752bd8cb65389996217b782198eb8&language=en-US&page=1')
+		axios.get('https://api.themoviedb.org/3/movie/top_rated?api_key=090752bd8cb65389996217b782198eb8&language=en-US&page=1')
 			.then(response => {
 				console.log(response.data.results);
 				this.setState({
-					moviesList: response.data.results,
-					totalResults: response.data.total_results
+					moviesList: response.data.results
 				})
 				console.log(this.state.moviesList)
-				console.log(this.state.totalResults)
 			})
 		
 	}
-	
+
 	nextpage = (pagesNumber) => {
-		axios.get('https://api.themoviedb.org/3/movie/popular?api_key=090752bd8cb65389996217b782198eb8&language=en-US&page=' + pagesNumber)
+		axios.get('https://api.themoviedb.org/3/movie/top_rated?api_key=090752bd8cb65389996217b782198eb8&language=en-US&page=' + pagesNumber)
 		.then(response => {
 			console.log(response.data.results);
 			this.setState({
@@ -49,9 +45,9 @@ export default class Home extends Component {
 	
 	render() {
 		
-		let name = <h1>Popular Movies</h1>;
+		let name = <h1>Top Rated Movies</h1>;
 		
-		let pages = <h1 className={styles.Pages}>Pages {this.state.activePage} of 500</h1>
+		let pages = <h1 className={styles.Pages}>Pages {this.state.activePage} of 500</h1>;
 		
 		return(
 			<div>
@@ -75,7 +71,7 @@ export default class Home extends Component {
 					pageRangeDisplayed={5}
 					onChange={this.nextpage.bind(this)}/>
 				<Footer />
-			</div>
+			</div>	
 		)
 	}
 }

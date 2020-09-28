@@ -7,19 +7,23 @@ export default class Body extends Component {
 	render () {
 		return(
 			<div className={styles.BodyContainer}>
-				{this.props.similar.slice(0, 10).map(list => {
-					return (
-					<NavLink
-						className={styles.Linked}
-						to={"/details/" + list.id}>
-						<Movies 
-							key={list.id}
-							list={list}
-							details={this.props.detailsHandler}
-						/>
-					</NavLink>
-					)
-				})} 
+				{this.props.similar.length ?
+					this.props.similar.slice(0, 10).map(list => {
+						return (
+						<NavLink
+							className={styles.Linked}
+							to={"/details/" + list.id}>
+							<Movies 
+								key={list.id}
+								list={list}
+								details={this.props.detailsHandler}
+							/>
+						</NavLink>
+						)
+				}) : (
+					<h1 className={styles.Data}>There is no data :(</h1>
+				)
+				} 
 			</div>
 		)
 	}

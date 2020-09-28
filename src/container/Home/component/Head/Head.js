@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Navbar from './navbar';
 import Particle from './Particle';
 import SearchFilm from './SearchFilm';
+import Logo from './Logo';
 
 import styles from '../Home.module.css';
 import Spinner from '../../../../assets/UI/Spinner';
@@ -30,6 +31,7 @@ class Head extends Component {
 			<Navbar />	
 			<Particle />
 			{search}
+			<Logo />
 		</div>
 		)
 	}
